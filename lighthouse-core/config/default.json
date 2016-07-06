@@ -14,7 +14,8 @@
       "accessibility",
       "screenshots",
       "critical-request-chains",
-      "speedline"
+      "speedline",
+      "content-width"
     ]
   },
   {
@@ -61,7 +62,8 @@
     "color-contrast",
     "image-alt",
     "label",
-    "tabindex"
+    "tabindex",
+    "content-width"
   ],
 
   "aggregations": [{
@@ -223,6 +225,10 @@
       "description": "Users increasingly experience your app on mobile devices, so it's important to ensure that the experience can adapt to smaller screens.",
       "criteria": {
         "viewport": {
+          "value": true,
+          "weight": 1
+        },
+        "content-width": {
           "value": true,
           "weight": 1
         }
