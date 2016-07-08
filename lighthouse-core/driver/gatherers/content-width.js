@@ -22,8 +22,10 @@ const Gather = require('./gather');
 
 /* istanbul ignore next */
 function getContentWidth() {
+  // Use window.innerWidth to get the scrollable size of the window (irrespective of zoom), and
+  // window.outerWidth to get the size of the visible area.
   __returnResults({
-    scrollWidth: document.scrollingElement.scrollWidth,
+    scrollWidth: window.innerWidth,
     viewportWidth: window.outerWidth
   });
 }
