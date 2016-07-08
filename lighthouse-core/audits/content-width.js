@@ -41,7 +41,7 @@ class ContentWidth extends Audit {
         typeof artifacts.ContentWidth.scrollWidth === 'undefined' ||
         typeof artifacts.ContentWidth.viewportWidth === 'undefined') {
       return ContentWidth.generateAuditResult({
-        value: false,
+        rawValue: false,
         debugString: 'Unable to find scroll and viewport widths.'
       });
     }
@@ -50,7 +50,7 @@ class ContentWidth extends Audit {
         artifacts.ContentWidth.scrollWidth === artifacts.ContentWidth.viewportWidth;
 
     return ContentWidth.generateAuditResult({
-      value: widthsMatch,
+      rawValue: widthsMatch,
       debugString: this.createDebugString(widthsMatch, artifacts.ContentWidth)
     });
   }

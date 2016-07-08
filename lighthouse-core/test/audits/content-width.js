@@ -20,7 +20,7 @@ const assert = require('assert');
 
 describe('Mobile-friendly: content-width audit', () => {
   it('fails when no input present', () => {
-    return assert.equal(Audit.audit({}).value, false);
+    return assert.equal(Audit.audit({}).rawValue, false);
   });
 
   it('fails when scroll width differs from viewport width', () => {
@@ -29,7 +29,7 @@ describe('Mobile-friendly: content-width audit', () => {
         scrollWidth: 100,
         viewportWidth: 300
       }
-    }).value, false);
+    }).rawValue, false);
   });
 
   it('passes when widths match', () => {
@@ -38,6 +38,6 @@ describe('Mobile-friendly: content-width audit', () => {
         scrollWidth: 300,
         viewportWidth: 300
       }
-    }).value, true);
+    }).rawValue, true);
   });
 });
